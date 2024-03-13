@@ -172,6 +172,38 @@
       </form>
       <button id="reset" title="Reset all settings to default">Reset</button>
     </footer>
+<!-- Place the button before the existing script -->
+      <button id="downloadICS">Download ICS File for Julian's Birthday Party</button>
+
+      <script>
+        document.getElementById('downloadICS').addEventListener('click', function() {
+          const event = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'BEGIN:VEVENT',
+            'SUMMARY:Julians Geburtstagsfeier',
+            'DESCRIPTION:Celebration of Julian\'s birthday!',
+            'LOCATION:123 Example Street, City, Country',
+            'DTSTART:20240101T090000Z', // Adjust date and time as necessary
+            'DTEND:20240101T110000Z',   // Adjust date and time as necessary
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\r\n');
+
+          const blob = new Blob([event], {type: 'text/calendar;charset=utf-8'});
+          const url = URL.createObjectURL(blob);
+
+          // Create a temporary anchor to trigger the download
+          const anchor = document.createElement('a');
+          anchor.href = url;
+          anchor.download = 'Julians-Geburtstagsfeier.ics';
+          document.body.appendChild(anchor); // Required for Firefox
+          anchor.click();
+          // Cleanup
+          document.body.removeChild(anchor);
+          URL.revokeObjectURL(url);
+        });
+      </script>
     <script>
 
       /* HTML Element Variables */
