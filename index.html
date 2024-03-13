@@ -95,7 +95,26 @@
       }
       #byline {
         margin-bottom: 1rem;
-      }
+      }.ics-download-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000; /* Ensures it stays on top of other content */
+        }
+
+        #downloadICS {
+        padding: 5px 10px;
+        font-size: 12px; /* Adjust size as needed */
+        background-color: #007bff; /* Change as per your theme */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        #downloadICS:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+        }
     </style>
   </head>
   <body>
@@ -172,8 +191,9 @@
       </form>
       <button id="reset" title="Reset all settings to default">Reset</button>
     </footer>
-<!-- Place the button before the existing script -->
-      <button id="downloadICS">Download ICS File for Julian's Birthday Party</button>
+    <div class="ics-download-container">
+      <button id="downloadICS">Download Calendar</button>
+    </div>
 
       <script>
         document.getElementById('downloadICS').addEventListener('click', function() {
