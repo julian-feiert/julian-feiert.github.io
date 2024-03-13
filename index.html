@@ -103,6 +103,7 @@
     <!-- New text overlay -->
     <div class="overlay-text">This is my birthday</div>
     </main>
+    <input type="checkbox" id="autoFireworks" name="auto" checked> Auto Fireworks
     <footer>
       <h3 id="title">Adjustable Fireworks</h3>
       <div id="byline">
@@ -173,6 +174,21 @@
       <button id="reset" title="Reset all settings to default">Reset</button>
     </footer>
     <script>
+
+        // Apply settings from localStorage when the page loads
+        window.onload = function() {
+          // Check if the 'autoFireworks' setting exists and apply it
+          const autoFireworksSetting = localStorage.getItem("autoFireworks");
+          if (autoFireworksSetting !== null) {
+            document.getElementById("autoFireworks").checked = autoFireworksSetting === "true";
+          }
+
+          // Event listener for the checkbox
+          document.getElementById("autoFireworks").addEventListener("change", function() {
+            // Store the setting in localStorage
+            localStorage.setItem("autoFireworks", this.checked);
+      });
+
 
       /* HTML Element Variables */
 
