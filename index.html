@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Adjustable Fireworks</title>
+    <title>Julians Geburtstagsfeier</title>
     <style>
       html, body {
         height: 100%;
@@ -22,6 +22,16 @@
         position: relative;
         cursor: pointer;
       }
+    .overlay-text {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Ensure it's centered */
+      color: white; /* White text color */
+      font-size: 2em; /* Adjust size as needed */
+      text-align: center; /* Center text */
+      z-index: 10; /* Ensure it's above other content */
+    }
       .spark {
         border-radius: 50%;
         position: absolute;
@@ -88,7 +98,10 @@
     </style>
   </head>
   <body>
-    <main></main>
+    <main>
+    <!-- New text overlay -->
+    <div class="overlay-text">This is my birthday</div>
+    </main>
     <footer>
       <h3 id="title">Adjustable Fireworks</h3>
       <div id="byline">
