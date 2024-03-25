@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Julians Geburtstagsfeier</title>
+    <title>Julian feiert mit dir!</title>
     <style>
       html, body {
         height: 100%;
@@ -95,10 +95,32 @@
       }
       #byline {
         margin-bottom: 1rem;
-      }.ics-download-container {
+      }.ics-download-container-demo {
         position: fixed;
         bottom: 20px;
         left: 50%;
+        z-index: 1000; /* Ensures it stays on top of other content */
+        }
+
+        #downloadICS {
+        padding: 5px 10px;
+        font-size: 12px; /* Adjust size as needed */
+        background-color: #007bff; /* Change as per your theme */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        #downloadICS:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+        }
+#byline {
+        margin-bottom: 1rem;
+      }.ics-download-container-party {
+        position: fixed;
+        bottom: 20px;
+        left: 20%;
         z-index: 1000; /* Ensures it stays on top of other content */
         }
 
@@ -120,7 +142,12 @@
   <body>
     <main>
     <!-- New text overlay -->
-    <div class="overlay-text">This is my birthday</div>
+    <div class="overlay-text">Wir feiern zusammen am 1.Juni:<br><br><br><br>
+ab 14:00 Mietenwahnsinn Demo am Potsdamer Platz <br><br>
+ab 18:00 Uhr Party in der Kinzig 9 <br><br><br>
+
+mehr Infos folgen...
+</div>
     </main>
     <footer>
       <h3 id="title">Adjustable Fireworks</h3>
@@ -191,21 +218,24 @@
       </form>
       <button id="reset" title="Reset all settings to default">Reset</button>
     </footer>
-    <div class="ics-download-container">
-      <button id="downloadICS">Add to my Calender!</button>
+    <div class="ics-download-container-demo">
+      <button id="downloadICSdemo">Add Demo to my Calender!</button>
+    </div>
+    <div class="ics-download-container-party">
+      <button id="downloadICSparty">Add Party to my Calender!</button>
     </div>
 
       <script>
-        document.getElementById('downloadICS').addEventListener('click', function() {
+        document.getElementById('downloadICSparty').addEventListener('click', function() {
           const event = [
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
             'BEGIN:VEVENT',
-            'SUMMARY:Julians Geburtstagsfeier',
-            'DESCRIPTION:Celebration of Julian\'s birthday!',
-            'LOCATION:123 Example Street, City, Country',
-            'DTSTART:20240101T090000Z', // Adjust date and time as necessary
-            'DTEND:20240101T110000Z',   // Adjust date and time as necessary
+            'SUMMARY:Julian feiert mit dir!',
+            'DESCRIPTION:Celebration of many awesome people!',
+            'LOCATION:Kinzig 9',
+            'DTSTART:20240601T180000Z', // Adjust date and time as necessary
+            'DTEND:20240602T040000Z',   // Adjust date and time as necessary
             'END:VEVENT',
             'END:VCALENDAR'
           ].join('\r\n');
@@ -216,7 +246,36 @@
           // Create a temporary anchor to trigger the download
           const anchor = document.createElement('a');
           anchor.href = url;
-          anchor.download = 'Julians-Geburtstagsfeier.ics';
+          anchor.download = 'Julians-Party.ics';
+          document.body.appendChild(anchor); // Required for Firefox
+          anchor.click();
+          // Cleanup
+          document.body.removeChild(anchor);
+          URL.revokeObjectURL(url);
+        });
+      </script>
+      <script>
+        document.getElementById('downloadICSdemo').addEventListener('click', function() {
+          const event = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'BEGIN:VEVENT',
+            'SUMMARY:Mietenwahnsinn Demo!',
+            'DESCRIPTION:Demonstration gegen Mietenwahnsinn, Verdrängung und Wohnungsnot!',
+            'LOCATION:Potsdamer Platz',
+            'DTSTART:20240601T140000Z', // Adjust date and time as necessary
+            'DTEND:20240601T111800Z',   // Adjust date and time as necessary
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\r\n');
+
+          const blob = new Blob([event], {type: 'text/calendar;charset=utf-8'});
+          const url = URL.createObjectURL(blob);
+
+          // Create a temporary anchor to trigger the download
+          const anchor = document.createElement('a');
+          anchor.href = url;
+          anchor.download = 'Mietenwahnsinn-demo.ics';
           document.body.appendChild(anchor); // Required for Firefox
           anchor.click();
           // Cleanup
