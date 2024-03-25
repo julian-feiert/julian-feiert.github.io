@@ -101,49 +101,36 @@
       }
       #byline {
         margin-bottom: 1rem;
-      }.ics-download-container-demo {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        z-index: 1000; /* Ensures it stays on top of other content */
-        }
-
-        #downloadICS {
-        padding: 5px 10px;
-        font-size: 12px; /* Adjust size as needed */
-        background-color: #007bff; /* Change as per your theme */
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        }
-
-        #downloadICS:hover {
-        background-color: #0056b3; /* Darker shade for hover effect */
-        }
-#byline {
-        margin-bottom: 1rem;
       }
-        .ics-download-container-party {
-        position: fixed;
-        bottom: 20px;
-        left: 20%;
-        z-index: 1000; /* Ensures it stays on top of other content */
-        }
+.ics-download-container-demo, .ics-download-container-party {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the containers */
+    z-index: 1000; /* Ensures they stay on top of other content */
+}
 
-        #downloadICS {
-        padding: 5px 10px;
-        font-size: 12px; /* Adjust size as needed */
-        background-color: #007bff; /* Change as per your theme */
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        }
+.ics-download-container-demo {
+    bottom: 80px; /* Positions this container higher */
+}
 
-        #downloadICS:hover {
-        background-color: #0056b3; /* Darker shade for hover effect */
-        }
+.ics-download-container-party {
+    bottom: 20px; /* Positions this container lower */
+}
+
+.download-button {
+    padding: 5px 10px;
+    font-size: 12px; /* Adjust size as needed */
+    background-color: #007bff; /* Change as per your theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
 
     </style>
   </head>
@@ -227,10 +214,10 @@ mehr Infos folgen...
       <button id="reset" title="Reset all settings to default">Reset</button>
     </footer>
     <div class="ics-download-container-demo">
-      <button id="downloadICSdemo">Add Demo to my Calender!</button>
+      <button class="download-button">Add Demo to my Calender!</button>
     </div>
     <div class="ics-download-container-party">
-      <button id="downloadICSparty">Add Party to my Calender!</button>
+      <button class="download-button"> Add Party to my Calender!</button>
     </div>
 
       <script>
