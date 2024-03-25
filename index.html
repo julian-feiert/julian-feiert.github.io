@@ -31,6 +31,12 @@
       font-size: 2em; /* Adjust size as needed */
       text-align: center; /* Center text */
       z-index: 10; /* Ensure it's above other content */
+        width: 300px; /* Fixed width */
+        height: 200px; /* Fixed height */
+        overflow: auto; /* Enable scrolling */
+        padding: 20px; /* Optional: Adds padding inside the scrollable area */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+        background: rgba(0, 0, 0, 0.5); /* Optional: Adds semi-transparent background */
     }
       .spark {
         border-radius: 50%;
@@ -117,7 +123,8 @@
         }
 #byline {
         margin-bottom: 1rem;
-      }.ics-download-container-party {
+      }
+        .ics-download-container-party {
         position: fixed;
         bottom: 20px;
         left: 20%;
@@ -137,6 +144,7 @@
         #downloadICS:hover {
         background-color: #0056b3; /* Darker shade for hover effect */
         }
+
     </style>
   </head>
   <body>
