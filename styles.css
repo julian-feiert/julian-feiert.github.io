@@ -83,6 +83,35 @@ main {
     font-size: 2vw; /* Adjust the font size as needed */
     text-align: left;
   }
+  
+ .foldable-header {
+  cursor: pointer;
+}
+
+.foldable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.foldable-content p {
+  margin: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.foldable-content.active {
+  max-height: 1000px; /* Adjust to your desired maximum height */
+}
+
+.fold-sign::after {
+  display: inline-block;
+  content: "+"; /* Plus sign by default */
+}
+
+.expanded .fold-sign::after {
+  content: "-"; /* Minus sign when expanded */
+}
 
 .spark {
     border-radius: 50%;
