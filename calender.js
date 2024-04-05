@@ -47,3 +47,14 @@ document.getElementById('downloadICSdemo').addEventListener('click', function() 
     'Mietenwahnsinn-demo.ics'
   );
 });
+
+document.getElementById('downloadICSreminder').addEventListener('click', function() {
+  createAndDownloadEvent(
+    'Checke mal das update zur Party!',
+    'https://julian-feiert.github.io/',
+    'None',
+    '20240525T120000Z', // Adjust date and time as necessary
+    '20240525T120500Z', // Adjust date and time as necessary
+    'Reminder_party.ics'
+  );
+});

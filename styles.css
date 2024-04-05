@@ -124,15 +124,20 @@ p, input[type=number] {
 }
 
 .ics-download-container-demo,
-.ics-download-container-party {
+.ics-download-container-party,
+.ics-download-container-reminder {
     position: fixed;
     left: 50%;
     transform: translateX(-50%); /* Centers the containers */
     z-index: 1000; /* Ensures they stay on top of other content */
 }
 
+.ics-download-container-reminder {
+    bottom: 120px; /* Positions this container higher */
+}
+
 .ics-download-container-demo {
-    bottom: 80px; /* Positions this container higher */
+    bottom: 70px; /* Positions this container higher */
 }
 
 .ics-download-container-party {
