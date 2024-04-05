@@ -1,0 +1,138 @@
+    /*<style>*/
+      html, body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        display: flex;
+        overflow: hidden;
+      }
+      body, main {
+        background-color: #000;
+      }
+      main {
+        flex-grow: 1;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+    .overlay-text {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Ensure it's centered */
+      color: white; /* White text color */
+      font-size: 4vw; /* Responsive font size */
+      text-align: center; /* Center text */
+      z-index: 10; /* Ensure it's above other content */
+      width: 80vw; /* Responsive width */
+      height: 40vh; /* Responsive height */
+      overflow: auto; /* Enable scrolling */
+      padding: 5vw; /* Responsive padding */
+      border-radius: 5px; /* Rounded corners */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+    
+    .text-large {
+  font-size: 4vw; /* Larger text */
+  display: block; /* Ensure it takes its own line */
+}
+    .text-small {
+  font-size: 2vw; /* Smaller text */
+  display: block; /* Ensure it takes its own line */
+}
+    .spark {
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity var(--fadeDur) linear var(--fadeDelay), margin-top var(--time) cubic-bezier(0.5,0,1,1), -webkit-transform var(--time) cubic-bezier(0,1,1,1);
+        transition: transform var(--time) cubic-bezier(0,1,1,1), opacity var(--fadeDur) linear var(--fadeDelay), margin-top var(--time) cubic-bezier(0.5,0,1,1);
+        transition: transform var(--time) cubic-bezier(0,1,1,1), opacity var(--fadeDur) linear var(--fadeDelay), margin-top var(--time) cubic-bezier(0.5,0,1,1), -webkit-transform var(--time) cubic-bezier(0,1,1,1);
+      }
+      .spark.start {
+        -webkit-transform: translate(var(--horizontal), var(--vertical));
+                transform: translate(var(--horizontal), var(--vertical));
+        opacity: 0;
+        margin-top: var(--fall);
+      }
+      footer {
+        display: none;
+        padding: 0.6rem;
+        border-radius: 0.6rem 0 0 0.6rem;
+        background-color: #fff;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      #fullscreen, #share {
+        margin-bottom: 0.2rem;
+      }
+      #reset {
+        margin-top: 0.2rem;
+      }
+      input, label {
+        cursor: pointer;
+      }
+      input.disabled {
+        color: #aaa;
+        border-color: rgba(118, 118, 118, 0.3);
+      }
+      input.disabled, input.disabled+label {
+        cursor: default;
+      }
+      input.disabled+label {
+        color: #aaa;
+      }
+      input[type=number]+label, select+label {
+        float: left;
+        margin-right: 0.2rem;
+      }
+      .indent {
+        margin-left: 0.6rem;
+      }
+      input[type=number] {
+        width: 8ch;
+      }
+      p, input[type=number] {
+        margin: 0.1rem 0;
+      }
+      #title {
+        margin: 0 0 0.2rem 0;
+      }
+      #byline p, #byline a {
+        display: inline;
+      }
+      #byline {
+        margin-bottom: 1rem;
+      }
+.ics-download-container-demo, .ics-download-container-party {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the containers */
+    z-index: 1000; /* Ensures they stay on top of other content */
+}
+
+.ics-download-container-demo {
+    bottom: 80px; /* Positions this container higher */
+}
+
+.ics-download-container-party {
+    bottom: 20px; /* Positions this container lower */
+}
+
+.download-button {
+    padding: 5px 10px;
+    font-size: 12px; /* Adjust size as needed */
+    background-color: #007bff; /* Change as per your theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+
+    /*</style>*/
