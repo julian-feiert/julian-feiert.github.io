@@ -1,101 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Julian feiert mit dir!</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Julian feiert mit dir!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
     <!-- New text overlay -->
-    <div class="overlay-text">Wir feiern zusammen am 1.Juni:<br><br><br><br>
-    <span class="text-small">
-ab 14:00 Mietenwahnsinn Demo am Potsdamer Platz <br><br>
-ab 18:00 Uhr Party in der Kinzig 9
-</span>
-<br><br><br>
-
-mehr Infos folgen...
-</div>
-    </main>
-    <footer>
-      <h3 id="title">Adjustable Fireworks</h3>
-      <div id="byline">
-        <p>By </p>
-        <a href="https://tylergordonhill.com/" target="_blank">Tyler Gordon Hill</a>
-      </div>
-      <button id="fullscreen" title="Hide the settings panel. Press escape to exit">Fullscreen</button>
-      <button id="share" title="Share the unique link to your settings configuration">Share</button>
-      <form>
-        <input type="checkbox" id="auto" name="auto" checked title="Automatically shoot off fireworks">
-        <label for="auto" title="Automatically shoot off fireworks">Auto</label><br>
-        <p title="Randomized delay between fireworks when Auto is on">Auto Delay</p>
-        <input type="number" id="delayMin" name="delayMin" value="200" title="Minimum delay between fireworks when Auto is on">
-        <label for="delayMin" class="indent" title="Minimum delay between fireworks when Auto is on">Min</label><br>
-        <input type="number" id="delayMax" name="delayMax" value="1000" title="Maximum delay between fireworks when Auto is on">
-        <label for="delayMax" class="indent" title="Maximum delay between fireworks when Auto is on">Max</label><br>
-        <input type="checkbox" id="pause" name="pause" title="Pause exploding fireworks">
-        <label for="pause" title="Pause exploding fireworks">Pause</label><br>
-        <select id="randColor" name="randColor" title="Method of generating firework colors">
-          <option value="spark" title="Each spark is a new random color">Spark</option>
-          <option value="firework" selected title="Each firework is a new random color">Firework</option>
-          <option value="chosen" title="Each spark is the same chosen color">Chosen</option>
-        </select>
-        <label for="randColor" title="Method of generating firework colors">Color Mode</label><br>
-        <input type="color" id="color" name="color" value="#ff0000" class="disabled indent" title="Color to use for all fireworks if Color Mode is set to Chosen">
-        <label for="color" title="Color to use for all fireworks if Color Mode is set to Chosen">Color</label><br>
-        <input type="number" id="brightnessMin" name="brightnessMin" value="100" min="1" max="250" placeholder="0 to 255" title="Minimum brightness for generated colors if Color Mode is set to Spark or Firework">
-        <label for="brightnessMin" class="indent" title="Minimum brightness for generated colors if Color Mode is set to Spark or Firework">Min Brightness</label><br>
-        <select id="randSize" name="randSize" title="Method of generating spark sizes">
-          <option value="spark" selected title="Each spark is a new random size">Spark</option>
-          <option value="firework" title="Every spark in a firework is the same random size">Firework</option>
-        </select>
-        <label for="randSize" title="Method of generating spark sizes">Size</label><br>
-        <input type="checkbox" id="sizeGrav" name="sizeGrav" class="indent" checked title="Closer sparks will fall faster">
-        <label for="sizeGrav" title="Closer sparks will fall faster">Size to Gravity</label><br>
-        <input type="number" id="sizeMin" name="sizeMin" value="2" title="Minimun spark size">
-        <label for="sizeMin" class="indent" title="Minimun spark size">Min</label><br>
-        <input type="number" id="sizeMax" name="sizeMax" value="8" title="Maximun spark size">
-        <label for="sizeMax" class="indent" title="Maximun spark size">Max</label><br>
-        <p title="Distance sparks fly from the center of their firework (radius)">Spark Distance</p>
-        <input type="number" id="sparkDistMin" name="sparkDistMin" value="0" title="Minimum distance sparks fly from the center of their firework (radius)">
-        <label for="sparkDistMin" class="indent" title="Minimum distance sparks fly from the center of their firework (radius)">Min</label><br>
-        <input type="number" id="sparkDistMax" name="sparkDistMax" value="100" title="Maximum distance sparks fly from the center of their firework (radius)">
-        <label for="sparkDistMax" class="indent" title="Minimum distance sparks fly from the center of their firework (radius)">Max</label><br>
-        <p title="Multiplier for the distance sparks fly from the center of their firework (radius)">Firework Distance</p>
-        <input type="number" id="fireworkDistMin" name="fireworkDistMin" value="1" title="Minimun multiplier for the distance sparks fly from the center of their firework (radius)">
-        <label for="fireworkDistMin" class="indent" title="Minimun multiplier for the distance sparks fly from the center of their firework (radius)">Min</label><br>
-        <input type="number" id="fireworkDistMax" name="fireworkDistMax" value="4" title="Maximun multiplier for the distance sparks fly from the center of their firework (radius)">
-        <label for="fireworkDistMax" class="indent" title="Maximun multiplier for the distance sparks fly from the center of their firework (radius)">Max</label><br>
-        <p title="Number of sparks in a firework">Sparks</p>
-        <input type="number" id="sparksMin" name="sparksMin" value="40" title="Minimun number of sparks in a firework">
-        <label for="sparksMin" class="indent" title="Minimun number of sparks in a firework">Min</label><br>
-        <input type="number" id="sparksMax" name="sparksMax" value="80" title="Maximun number of sparks in a firework">
-        <label for="sparksMax" class="indent" title="Maximun number of sparks in a firework">Max</label><br>
-        <p title="Calculations for spark fade timing">Fade</p>
-        <input type="number" id="fadeMin" name="fadeMin" value="1000" title="Minimum fade time start">
-        <label for="fadeMin" class="indent" title="Minimum fade time start">Min</label><br>
-        <input type="number" id="fadeMax" name="fadeMax" value="2000" title="Maximum fade time start">
-        <label for="fadeMax" class="indent" title="Maximum fade time start">Max</label><br>
-        <input type="number" id="fadeDur" name="fadeDur" value="2000" title="Duration of fade">
-        <label for="fadeDur" class="indent" title="Duration of fade">Duration</label><br>
-        <p title="Rate at which gravty accelerates sparks downwards">Gravity</p>
-        <input type="number" id="gravityMin" name="gravityMin" value="100" title="Minimum rate at which gravty accelerates sparks downwards">
-        <label for="gravityMin" class="indent" title="Minimum rate at which gravty accelerates sparks downwards">Min</label><br>
-        <input type="number" id="gravityMax" name="gravityMax" value="200" title="Maximum rate at which gravty accelerates sparks downwards">
-        <label for="gravityMax" class="indent" title="Maximum rate at which gravty accelerates sparks downwards">Max</label><br>
-      </form>
-      <button id="reset" title="Reset all settings to default">Reset</button>
-    </footer>
-    <div class="ics-download-container-demo">
-      <button id="downloadICSdemo" class="download-button">Add Demo to my Calender!</button>
+    <div class="overlay-text">
+      Wir feiern zusammen am 1.Juni:<br><br><br><br>
+      <span class="text-small">
+        ab 14:00 Mietenwahnsinn Demo am Potsdamer Platz <br><br>
+        ab 18:00 Uhr Party in der Kinzig 9
+      </span>
+      <br><br><br>
+      mehr Infos folgen...
     </div>
-    <div class="ics-download-container-party">
-      <button id="downloadICSparty" class="download-button"> Add Party to my Calender!</button>
+  </main>
+<footer>
+    <h3 id="title">Adjustable Fireworks</h3>
+    <div id="byline">
+      <p>By </p>
+      <a href="https://tylergordonhill.com/" target="_blank">Tyler Gordon Hill</a>
     </div>
+    <button id="fullscreen" title="Hide the settings panel. Press escape to exit">Fullscreen</button>
+    <button id="share" title="Share the unique link to your settings configuration">Share</button>
+    <form>
+      <input type="checkbox" id="auto" name="auto" checked title="Automatically shoot off fireworks">
+      <label for="auto" title="Automatically shoot off fireworks">Auto</label><br>
+      <p title="Randomized delay between fireworks when Auto is on">Auto Delay</p>
+      <input type="number" id="delayMin" name="delayMin" value="200" title="Minimum delay between fireworks when Auto is on">
+      <label for="delayMin" class="indent" title="Minimum delay between fireworks when Auto is on">Min</label><br>
+      <input type="number" id="delayMax" name="delayMax" value="1000" title="Maximum delay between fireworks when Auto is on">
+      <label for="delayMax" class="indent" title="Maximum delay between fireworks when Auto is on">Max</label><br>
+      <input type="checkbox" id="pause" name="pause" title="Pause exploding fireworks">
+      <label for="pause" title="Pause exploding fireworks">Pause</label><br>
+      <select id="randColor" name="randColor" title="Method of generating firework colors">
+        <option value="spark" title="Each spark is a new random color">Spark</option>
+        <option value="firework" selected title="Each firework is a new random color">Firework</option>
+        <option value="chosen" title="Each spark is the same chosen color">Chosen</option>
+      </select>
+      <label for="randColor" title="Method of generating firework colors">Color Mode</label><br>
+      <input type="color" id="color" name="color" value="#ff0000" class="disabled indent" title="Color to use for all fireworks if Color Mode is set to Chosen">
+      <label for="color" title="Color to use for all fireworks if Color Mode is set to Chosen">Color</label><br>
+      <input type="number" id="brightnessMin" name="brightnessMin" value="100" min="1" max="250" placeholder="0 to 255" title="Minimum brightness for generated colors if Color Mode is set to Spark or Firework">
+      <label for="brightnessMin" class="indent" title="Minimum brightness for generated colors if Color Mode is set to Spark or Firework">Min Brightness</label><br>
+      <select id="randSize" name="randSize" title="Method of generating spark sizes">
+        <option value="spark" selected title="Each spark is a new random size">Spark</option>
+        <option value="firework" title="Every spark in a firework is the same random size">Firework</option>
+      </select>
+      <label for="randSize" title="Method of generating spark sizes">Size</label><br>
+      <input type="checkbox" id="sizeGrav" name="sizeGrav" class="indent" checked title="Closer sparks will fall faster">
+      <label for="sizeGrav" title="Closer sparks will fall faster">Size to Gravity</label><br>
+      <input type="number" id="sizeMin" name="sizeMin" value="2" title="Minimun spark size">
+      <label for="sizeMin" class="indent" title="Minimun spark size">Min</label><br>
+      <input type="number" id="sizeMax" name="sizeMax" value="8" title="Maximun spark size">
+      <label for="sizeMax" class="indent" title="Maximun spark size">Max</label><br>
+      <p title="Distance sparks fly from the center of their firework (radius)">Spark Distance</p>
+      <input type="number" id="sparkDistMin" name="sparkDistMin" value="0" title="Minimum distance sparks fly from the center of their firework (radius)">
+      <label for="sparkDistMin" class="indent" title="Minimum distance sparks fly from the center of their firework (radius)">Min</label><br>
+      <input type="number" id="sparkDistMax" name="sparkDistMax" value="100" title="Maximum distance sparks fly from the center of their firework (radius)">
+      <label for="sparkDistMax" class="indent" title="Minimum distance sparks fly from the center of their firework (radius)">Max</label><br>
+      <p title="Multiplier for the distance sparks fly from the center of their firework (radius)">Firework Distance</p>
+      <input type="number" id="fireworkDistMin" name="fireworkDistMin" value="1" title="Minimun multiplier for the distance sparks fly from the center of their firework (radius)">
+      <label for="fireworkDistMin" class="indent" title="Minimun multiplier for the distance sparks fly from the center of their firework (radius)">Min</label><br>
+      <input type="number" id="fireworkDistMax" name="fireworkDistMax" value="4" title="Maximun multiplier for the distance sparks fly from the center of their firework (radius)">
+      <label for="fireworkDistMax" class="indent" title="Maximun multiplier for the distance sparks fly from the center of their firework (radius)">Max</label><br>
+      <p title="Number of sparks in a firework">Sparks</p>
+      <input type="number" id="sparksMin" name="sparksMin" value="40" title="Minimun number of sparks in a firework">
+      <label for="sparksMin" class="indent" title="Minimun number of sparks in a firework">Min</label><br>
+      <input type="number" id="sparksMax" name="sparksMax" value="80" title="Maximun number of sparks in a firework">
+      <label for="sparksMax" class="indent" title="Maximun number of sparks in a firework">Max</label><br>
+      <p title="Calculations for spark fade timing">Fade</p>
+      <input type="number" id="fadeMin" name="fadeMin" value="1000" title="Minimum fade time start">
+      <label for="fadeMin" class="indent" title="Minimum fade time start">Min</label><br>
+      <input type="number" id="fadeMax" name="fadeMax" value="2000" title="Maximum fade time start">
+      <label for="fadeMax" class="indent" title="Maximum fade time start">Max</label><br>
+      <input type="number" id="fadeDur" name="fadeDur" value="2000" title="Duration of fade">
+      <label for="fadeDur" class="indent" title="Duration of fade">Duration</label><br>
+      <p title="Rate at which gravty accelerates sparks downwards">Gravity</p>
+      <input type="number" id="gravityMin" name="gravityMin" value="100" title="Minimum rate at which gravty accelerates sparks downwards">
+      <label for="gravityMin" class="indent" title="Minimum rate at which gravty accelerates sparks downwards">Min</label><br>
+      <input type="number" id="gravityMax" name="gravityMax" value="200" title="Maximum rate at which gravty accelerates sparks downwards">
+      <label for="gravityMax" class="indent" title="Maximum rate at which gravty accelerates sparks downwards">Max</label><br>
+    </form>
+    <button id="reset" title="Reset all settings to default">Reset</button>
+  </footer>
 
-<script src="calender.js"></script>
-<script src="fireworks.js"></script>
-  </body>
+  <div class="ics-download-container-demo">
+    <button id="downloadICSdemo" class="download-button">Add Demo to my Calender!</button>
+  </div>
+  <div class="ics-download-container-party">
+    <button id="downloadICSparty" class="download-button"> Add Party to my Calender!</button>
+  </div>
+  <script src="calender.js"></script>
+  <script src="fireworks.js"></script>
+</body>
 </html>
