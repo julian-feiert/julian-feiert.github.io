@@ -36,8 +36,25 @@ main {
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
+.left-align {
+    text-align: left;
+  }
+
+.right-align {
+    text-align: right;
+  }
+
+.centered {
+      text-align: center; /* Center text horizontally */
+    }
+
 .text-large {
     font-size: 4vw; /* Larger text */
+    display: block; /* Ensure it takes its own line */
+}
+
+.text-medium {
+    font-size: 3vw; /* Smaller text */
     display: block; /* Ensure it takes its own line */
 }
 
@@ -45,6 +62,27 @@ main {
     font-size: 2vw; /* Smaller text */
     display: block; /* Ensure it takes its own line */
 }
+
+.red-text {
+  color: red; /* Set text color to red */
+}
+
+.blue-text {
+  color: blue; /* Set text color to blue */
+}
+
+.green-text {
+  color: green; /* Set text color to green */
+}
+
+  ul, ol {
+    font-size: 2vw; /* Adjust the font size as needed */
+  }
+
+  li {
+    font-size: 2vw; /* Adjust the font size as needed */
+    text-align: left;
+  }
 
 .spark {
     border-radius: 50%;
@@ -144,7 +182,7 @@ p, input[type=number] {
     bottom: 20px; /* Positions this container lower */
 }
 
-.download-button {
+.download-button-blue {
     padding: 5px 10px;
     font-size: 12px; /* Adjust size as needed */
     background-color: #007bff; /* Change as per your theme */
@@ -154,6 +192,20 @@ p, input[type=number] {
     cursor: pointer;
 }
 
-.download-button:hover {
+.download-button-blue:hover {
     background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.download-button-red {
+    padding: 5px 10px;
+    font-size: 12px; /* Adjust size as needed */
+    background-color: #8b0000; /* Change as per your theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-button-red:hover {
+    background-color: #7a0000; /* Darker shade for hover effect */
 }
