@@ -29,7 +29,7 @@ function createAndDownloadEvent(summary, description, location, startDate, endDa
 document.getElementById('downloadICSparty').addEventListener('click', function() {
   createAndDownloadEvent(
     'Julian feiert mit dir!',
-    'Celebration of many awesome people!',
+    'https://julian-feiert.github.io/',
     'Kinzig 9',
     '20240601T180000Z', // Adjust date and time as necessary
     '20240602T040000Z', // Adjust date and time as necessary
@@ -43,7 +43,7 @@ document.getElementById('downloadICSdemo').addEventListener('click', function() 
     'Demonstration gegen Mietenwahnsinn, Verdrängung und Wohnungsnot!',
     'Potsdamer Platz',
     '20240601T140000Z', // Adjust date and time as necessary
-    '20240601T111800Z', // Adjust date and time as necessary
+    '20240601T160000Z', // Adjust date and time as necessary
     'Mietenwahnsinn-demo.ics'
   );
 });
