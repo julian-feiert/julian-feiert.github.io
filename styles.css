@@ -76,15 +76,15 @@ main {
 }
 
   ul, ol {
-    font-size: 2vw; /* Adjust the font size as needed */
+    font-size: 3vw; /* Adjust the font size as needed */
   }
 
   li {
-    font-size: 2vw; /* Adjust the font size as needed */
+    font-size: 3vw; /* Adjust the font size as needed */
     text-align: left;
   }
   
- .foldable-header {
+.foldable-header {
   cursor: pointer;
 }
 
@@ -104,12 +104,12 @@ main {
   max-height: 1000px; /* Adjust to your desired maximum height */
 }
 
-.fold-sign::after {
+.foldable-header .fold-sign::after { /* Updated selector */
   display: inline-block;
   content: "+"; /* Plus sign by default */
 }
 
-.expanded .fold-sign::after {
+.foldable-header.expanded .fold-sign::after { /* Updated selector */
   content: "-"; /* Minus sign when expanded */
 }
 
